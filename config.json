@@ -1,0 +1,25 @@
+{
+    "server": {
+        "host": "0.0.0.0",
+        "port": 18081,
+        "auto_open_browser": true
+    },
+    "logging": {
+        "level": "INFO",
+        "max_file_size_mb": 10,
+        "backup_count": 5
+    },
+    "tray": {
+        "enabled": true,
+        "minimize_to_tray": true,
+        "close_to_tray": true
+    },
+    "app": {
+        "title": "Windows 使用者密碼修改工具",
+        "locale": "zh-TW"
+    },
+    "security": {
+        "enable_password_masking": true,
+        "log_user_actions": true
+    }
+}

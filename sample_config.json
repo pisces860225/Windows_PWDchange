@@ -1,0 +1,58 @@
+{
+  "_comment": "Windows 使用者密碼修改工具配置檔案",
+  "_說明": "此檔案包含應用程式的所有設定選項，修改後需重啟應用程式生效",
+
+  "server": {
+    "_說明": "伺服器設定",
+    "host": "0.0.0.0",
+    "_host說明": "監聽的主機地址，0.0.0.0表示監聽所有網絡介面",
+
+    "port": 18080,
+    "_port說明": "伺服器端口，若被佔用請修改為其他值",
+
+    "auto_open_browser": true,
+    "_auto_open_browser說明": "應用程式啟動時是否自動開啟瀏覽器"
+  },
+
+  "logging": {
+    "_說明": "日誌設定",
+    "level": "INFO",
+    "_level說明": "日誌記錄級別，可選值：DEBUG, INFO, WARNING, ERROR, CRITICAL",
+
+    "max_file_size_mb": 10,
+    "_max_file_size_mb說明": "單個日誌檔案的最大大小，單位為MB",
+
+    "backup_count": 5,
+    "_backup_count說明": "保留的日誌檔案備份數量"
+  },
+
+  "tray": {
+    "_說明": "系統托盤設定",
+    "enabled": true,
+    "_enabled說明": "是否啟用系統托盤圖標功能",
+
+    "minimize_to_tray": true,
+    "_minimize_to_tray說明": "最小化視窗時是否隱藏到系統托盤",
+
+    "close_to_tray": true,
+    "_close_to_tray說明": "關閉視窗時是否隱藏到系統托盤而非退出程式"
+  },
+
+  "app": {
+    "_說明": "應用程式通用設定",
+    "title": "Windows 使用者密碼修改工具",
+    "_title說明": "應用程式標題，顯示在視窗標題欄和網頁標題",
+
+    "locale": "zh-TW",
+    "_locale說明": "界面語言設定，目前支援：zh-TW(繁體中文)"
+  },
+
+  "security": {
+    "_說明": "安全相關設定",
+    "enable_password_masking": true,
+    "_enable_password_masking說明": "在日誌中是否遮罩密碼，建議保持啟用以提高安全性",
+
+    "log_user_actions": true,
+    "_log_user_actions說明": "是否記錄用戶的操作行為，包括使用者名稱等敏感信息"
+  }
+}

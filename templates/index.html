@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Windows 使用者密碼修改{% endblock %}
+
+{% block content %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h2 class="mb-0">修改 Windows 使用者密碼</h2>
+    </div>
+    <div class="card-body">
+        <form method="post" action="/change-password" id="passwordForm">
+            <div class="mb-3">
+                <label for="username" class="form-label">使用者名稱</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="current_password" class="form-label">目前密碼</label>
+                <input type="password" class="form-control" id="current_password" name="current_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_password" class="form-label">新密碼</label>
+                <input type="password" class="form-control" id="new_password" name="new_password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm_password" class="form-label">確認新密碼</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                <div id="passwordFeedback" class="form-text mt-2"></div>
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary" id="submitBtn">修改密碼</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const newPassword = document.getElementById('new_password');
+        const confirmPassword = document.getElementById('confirm_password');
+        const passwordFeedback = document.getElementById('passwordFeedback');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // 即時檢查密碼是否匹配
+        function checkPasswordMatch() {
+            if (confirmPassword.value === '') {
+                passwordFeedback.textContent = '';
+                passwordFeedback.classList.remove('text-success', 'text-danger');
+                confirmPassword.classList.remove('border-success', 'border-danger');
+                return;
+            }
+
+            if (newPassword.value === confirmPassword.value) {
+                passwordFeedback.textContent = '密碼匹配';
+                passwordFeedback.classList.add('text-success');
+                passwordFeedback.classList.remove('text-danger');
+                confirmPassword.classList.add('border-success');
+                confirmPassword.classList.remove('border-danger');
+                submitBtn.disabled = false;
+            } else {
+                passwordFeedback.textContent = '密碼不匹配';
+                passwordFeedback.classList.add('text-danger');
+                passwordFeedback.classList.remove('text-success');
+                confirmPassword.classList.add('border-danger');
+                confirmPassword.classList.remove('border-success');
+                submitBtn.disabled = true;
+            }
+        }
+
+        // 監聽兩個輸入框的變化
+        newPassword.addEventListener('input', checkPasswordMatch);
+        confirmPassword.addEventListener('input', checkPasswordMatch);
+
+        // 表單提交前確認密碼是否匹配
+        document.getElementById('passwordForm').addEventListener('submit', function (e) {
+            if (newPassword.value !== confirmPassword.value) {
+                e.preventDefault();
+                alert('確認密碼與新密碼不符');
+                return false;
+            }
+        });
+    });
+</script>
+{% endblock %}

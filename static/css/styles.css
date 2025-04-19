@@ -1,0 +1,85 @@
+/* 主題顏色 */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0069d9;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --light-bg: #f8f9fa;
+}
+
+/* 全局樣式 */
+body {
+    background-color: var(--light-bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* 卡片樣式 */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 按鈕效果 */
+.btn {
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 密碼強度指示器 */
+.password-strength-meter {
+    height: 5px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #ddd;
+    border-radius: 3px;
+    position: relative;
+}
+
+.password-strength-meter .strength-indicator {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-weak {
+    background-color: var(--danger-color);
+    width: 25%;
+}
+
+.strength-medium {
+    background-color: #ffc107;
+    width: 50%;
+}
+
+.strength-strong {
+    background-color: var(--success-color);
+    width: 100%;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+}

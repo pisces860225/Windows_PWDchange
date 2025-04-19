@@ -1,0 +1,14 @@
+fastapi==0.104.1
+uvicorn==0.23.2
+jinja2==3.1.2
+python-multipart==0.0.6
+pydantic==2.4.2
+pywin32==306
+nuitka==1.9.7
+ordered-set==4.1.0
+zstandard==0.22.0
+pillow==10.1.0
+# 用於單一檔案打包
+pyside6==6.5.3
+# 用於系統托盤
+pystray==0.19.4 

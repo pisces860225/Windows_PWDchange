@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}密碼修改結果{% endblock %}
+
+{% block content %}
+<div class="card mt-4">
+    <div class="card-header">
+        <h2 class="mb-0">密碼修改結果</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-{{ 'success' if success else 'danger' }}" role="alert">
+            {{ message }}
+        </div>
+        <div class="d-grid gap-2 mt-3">
+            <a href="http://192.168.240.200/" class="btn btn-primary">返回首頁</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
