@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "windows-pwdchange"
+version = "0.1.0"
+description = ""
+authors = ["jeremy.huang <forpythonwork0225@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.2"
+jinja2 = "^3.1.6"
+python-multipart = "^0.0.20"
+pydantic = "^2.11.3"
+pywin32 = "^310"
+nuitka = "^2.6.9"
+ordered-set = "^4.1.0"
+zstandard = "^0.23.0"
+pillow = "^11.2.1"
+pyside6 = "^6.9.0"
+pystray = "^0.19.5"
+black = "^25.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
